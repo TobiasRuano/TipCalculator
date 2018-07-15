@@ -25,7 +25,7 @@ class ViewController: UIViewController {
         if statusBar.responds(to:#selector(setter: UIView.backgroundColor)) {
             statusBar.backgroundColor = UIColor(displayP3Red: 0.000, green: 0.478, blue: 1.000, alpha: 1.0)
         }
-        UIApplication.shared.statusBarStyle = .default
+        UIStatusBarStyle.lightContent
         
         slider.setValue(0.15, animated: false)
     }
@@ -48,13 +48,6 @@ class ViewController: UIViewController {
             totalPriceLabel.text = "$\(String(percentage + price))"
         }
     }
-    
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
-        print("return pressed")
-        textField.resignFirstResponder()
-        return false
-    }
-    
 }
 
 extension UITextField {
