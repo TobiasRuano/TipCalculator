@@ -21,12 +21,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let statusBar: UIView = UIApplication.shared.value(forKey: "statusBar") as! UIView
-        if statusBar.responds(to:#selector(setter: UIView.backgroundColor)) {
-            statusBar.backgroundColor = UIColor(displayP3Red: 0.000, green: 0.478, blue: 1.000, alpha: 1.0)
-        }
-        UIStatusBarStyle.lightContent
-        
         slider.setValue(0.15, animated: false)
     }
 
