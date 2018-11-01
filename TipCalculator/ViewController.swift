@@ -8,7 +8,7 @@
 
 import UIKit
 
-var price: Int = 0
+var price: Double = 0
 
 class ViewController: UIViewController {
 
@@ -31,15 +31,15 @@ class ViewController: UIViewController {
 
     @IBAction func SliderAction(_ sender: Any) {
         initialPriceTextField.resignFirstResponder()
-        let value = Int((slider.value)*100)
+        let value: Int = Int((slider.value)*100)
         percentageTipLabel.text = "Tip (\(value)%)"
         
         if price != 0 {
             initialPriceTextField.text = "$\(price)"
-            let percentage = (price * value)/100
+            let percentage = Double(price * Double(value))/100
         
-            tipPriceLabel.text = "$\(percentage)"
-            totalPriceLabel.text = "$\(String(percentage + price))"
+            tipPriceLabel.text = NSString(format: "$%.2f", (percentage)) as String
+            totalPriceLabel.text = NSString(format: "$%.2f", (percentage + price)) as String
         }
     }
 }
@@ -73,10 +73,71 @@ extension UITextField {
     
     @objc func doneButtonAction() {
         self.resignFirstResponder()
-        if let prueba = Int(self.text!){
+        
+        if self.text?.description[0] == "$" {
+            self.text = self.text?.components(separatedBy: ["$"]).joined()
+        }
+        if let prueba = Double(self.text!){
             price = prueba
             self.text = "$\(self.text!)"
         }
     }
 }
 
+//Extension to be able to use self.text?.description[0] == "$"
+extension String {
+    subscript (i: Int) -> Character {
+        return self[index(startIndex, offsetBy: i)]
+    }
+    subscript (bounds: CountableRange<Int>) -> Substring {
+        let start = index(startIndex, offsetBy: bounds.lowerBound)
+        let end = index(startIndex, offsetBy: bounds.upperBound)
+        return self[start ..< end]
+    }
+    subscript (bounds: CountableClosedRange<Int>) -> Substring {
+        let start = index(startIndex, offsetBy: bounds.lowerBound)
+        let end = index(startIndex, offsetBy: bounds.upperBound)
+        return self[start ... end]
+    }
+    subscript (bounds: CountablePartialRangeFrom<Int>) -> Substring {
+        let start = index(startIndex, offsetBy: bounds.lowerBound)
+        let end = index(endIndex, offsetBy: -1)
+        return self[start ... end]
+    }
+    subscript (bounds: PartialRangeThrough<Int>) -> Substring {
+        let end = index(startIndex, offsetBy: bounds.upperBound)
+        return self[startIndex ... end]
+    }
+    subscript (bounds: PartialRangeUpTo<Int>) -> Substring {
+        let end = index(startIndex, offsetBy: bounds.upperBound)
+        return self[startIndex ..< end]
+    }
+}
+extension Substring {
+    subscript (i: Int) -> Character {
+        return self[index(startIndex, offsetBy: i)]
+    }
+    subscript (bounds: CountableRange<Int>) -> Substring {
+        let start = index(startIndex, offsetBy: bounds.lowerBound)
+        let end = index(startIndex, offsetBy: bounds.upperBound)
+        return self[start ..< end]
+    }
+    subscript (bounds: CountableClosedRange<Int>) -> Substring {
+        let start = index(startIndex, offsetBy: bounds.lowerBound)
+        let end = index(startIndex, offsetBy: bounds.upperBound)
+        return self[start ... end]
+    }
+    subscript (bounds: CountablePartialRangeFrom<Int>) -> Substring {
+        let start = index(startIndex, offsetBy: bounds.lowerBound)
+        let end = index(endIndex, offsetBy: -1)
+        return self[start ... end]
+    }
+    subscript (bounds: PartialRangeThrough<Int>) -> Substring {
+        let end = index(startIndex, offsetBy: bounds.upperBound)
+        return self[startIndex ... end]
+    }
+    subscript (bounds: PartialRangeUpTo<Int>) -> Substring {
+        let end = index(startIndex, offsetBy: bounds.upperBound)
+        return self[startIndex ..< end]
+    }
+}
