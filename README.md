@@ -3,6 +3,10 @@
 
 ![](header.png)
 
+## Features
+* Select the percentage of tip you want
+* Divide the bill with others
+
 ## Meta
 
 Tobias Ruano – [@tobiasruano](https://twitter.com/tobiasruano) – truano@uade.edu.ar
