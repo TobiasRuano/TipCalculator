@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5sQ-nd-qaM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5sQ-nd-qaM">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -71,6 +71,41 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="doneAccessory" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </textField>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="NDs-yE-Fib">
+                                <rect key="frame" x="108.66666666666669" y="444.66666666666669" width="158" height="177.33333333333331"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Split between:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c9m-Ux-8nJ">
+                                        <rect key="frame" x="8" y="0.0" width="141.66666666666666" height="27.666666666666668"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RUu-QQ-IcQ">
+                                        <rect key="frame" x="68.333333333333329" y="35.666666666666629" width="21.333333333333329" height="42"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="0Fm-Sz-cEO">
+                                        <rect key="frame" x="31.999999999999986" y="85.666666666666686" width="94" height="29"/>
+                                        <connections>
+                                            <action selector="splitBetween:" destination="BYZ-38-t0r" eventType="valueChanged" id="hs1-ht-A5g"/>
+                                        </connections>
+                                    </stepper>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total per Person:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8qb-LD-E75">
+                                        <rect key="frame" x="0.0" y="122.66666666666667" width="158" height="26.333333333333329"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$22.75" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Vp-7j-FVE">
+                                        <rect key="frame" x="51.666666666666671" y="156.99999999999994" width="54.333333333333329" height="20.333333333333343"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -83,7 +118,9 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="P09-31-pPH" secondAttribute="trailing" constant="16" id="Y89-AK-SFc"/>
                             <constraint firstItem="3Rh-ms-p3s" firstAttribute="top" secondItem="0Lg-ec-JdW" secondAttribute="bottom" constant="16" id="ZAC-WC-mMi"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="2Jv-af-vea" secondAttribute="trailing" constant="16" id="ceJ-Pd-ZVX"/>
+                            <constraint firstItem="NDs-yE-Fib" firstAttribute="top" secondItem="2Jv-af-vea" secondAttribute="bottom" constant="50" id="ex3-Zf-D0K"/>
                             <constraint firstItem="0Lg-ec-JdW" firstAttribute="top" secondItem="P09-31-pPH" secondAttribute="bottom" constant="16" id="kKE-jm-3G3"/>
+                            <constraint firstItem="NDs-yE-Fib" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="sOl-Ws-XYI"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="VsI-Ji-lcL" secondAttribute="trailing" constant="16" id="uKD-P5-ZDv"/>
                             <constraint firstItem="74y-yp-c8V" firstAttribute="leading" secondItem="3Rh-ms-p3s" secondAttribute="trailing" constant="20" id="uKN-vT-rCJ"/>
                             <constraint firstItem="P09-31-pPH" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="yUw-aA-eRa"/>
@@ -92,10 +129,13 @@
                     </view>
                     <navigationItem key="navigationItem" title="Tip Calculator" id="Wo9-Wy-PQb"/>
                     <connections>
+                        <outlet property="SplitStepper" destination="0Fm-Sz-cEO" id="dRt-Gt-pXi"/>
                         <outlet property="initialPriceTextField" destination="P09-31-pPH" id="4FP-Dt-l3M"/>
                         <outlet property="percentageTipLabel" destination="0Lg-ec-JdW" id="9gQ-EA-TsW"/>
                         <outlet property="slider" destination="2Jv-af-vea" id="122-Np-fy6"/>
+                        <outlet property="splitPersonsLabel" destination="RUu-QQ-IcQ" id="m3E-Ld-h4U"/>
                         <outlet property="tipPriceLabel" destination="VsI-Ji-lcL" id="1wF-4Z-ppS"/>
+                        <outlet property="totalPerPersonLabel" destination="9Vp-7j-FVE" id="1A8-pK-Pjk"/>
                         <outlet property="totalPriceLabel" destination="74y-yp-c8V" id="7b4-DQ-6ga"/>
                     </connections>
                 </viewController>

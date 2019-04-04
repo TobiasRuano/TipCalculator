@@ -17,11 +17,24 @@ class ViewController: UIViewController {
     @IBOutlet weak var totalPriceLabel: UILabel!
     @IBOutlet weak var percentageTipLabel: UILabel!
     @IBOutlet weak var slider: UISlider!
+    @IBOutlet weak var splitPersonsLabel: UILabel!
+    @IBOutlet weak var totalPerPersonLabel: UILabel!
+    @IBOutlet weak var SplitStepper: UIStepper!
+    
+    var totalPrice = 0.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         slider.setValue(0.15, animated: false)
+        setUI()
+    }
+    
+    func setUI() {
+        SplitStepper.minimumValue = 1
+        SplitStepper.stepValue = 1
+        splitPersonsLabel.text = "1"
+        totalPerPersonLabel.text = "0"
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,14 +47,21 @@ class ViewController: UIViewController {
         let value: Int = Int((slider.value)*100)
         percentageTipLabel.text = "Tip (\(value)%)"
         
-        if price != 0 {
-            initialPriceTextField.text = "$\(price)"
-            let percentage = Double(price * Double(value))/100
+        initialPriceTextField.text = "$\(price)"
+        let percentage = Double(price * Double(value))/100
         
-            tipPriceLabel.text = NSString(format: "$%.2f", (percentage)) as String
-            totalPriceLabel.text = NSString(format: "$%.2f", (percentage + price)) as String
-        }
+        totalPrice = percentage + price
+        
+        tipPriceLabel.text = NSString(format: "$%.2f", (percentage)) as String
+        totalPriceLabel.text = NSString(format: "$%.2f", totalPrice) as String
     }
+    
+    @IBAction func splitBetween(_ sender: UIStepper) {
+        splitPersonsLabel.text = "\(Int(sender.value))"
+        let result = totalPrice / sender.value
+        totalPerPersonLabel.text = NSString(format: "$%.2f", (result)) as String
+    }
+    
 }
 
 extension UITextField {
@@ -74,6 +94,9 @@ extension UITextField {
     @objc func doneButtonAction() {
         self.resignFirstResponder()
         
+        if self.text == "" {
+            self.text? = "$"
+        }
         if self.text?.description[0] == "$" {
             self.text = self.text?.components(separatedBy: ["$"]).joined()
         }
