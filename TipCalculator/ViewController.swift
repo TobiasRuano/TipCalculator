@@ -42,24 +42,55 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func doneEditingTextField(_ sender: UITextField) {
+        doneButtonAction()
+        let porcentaje = price * 0.15
+        tipPriceLabel.text = NSString(format: "$%.2f", (porcentaje)) as String
+        initialPriceTextField.text = NSString(format: "$%.2f", (price)) as String
+        
+        totalPrice = porcentaje + price
+        
+        totalPriceLabel.text = NSString(format: "$%.2f", totalPrice) as String
+        
+        totalPerPersonLabel.text = totalPriceLabel.text
+        slider.setValue(0.15, animated: true)
+    }
     @IBAction func SliderAction(_ sender: Any) {
         initialPriceTextField.resignFirstResponder()
         let value: Int = Int((slider.value)*100)
         percentageTipLabel.text = "Tip (\(value)%)"
         
-        initialPriceTextField.text = "$\(price)"
+        initialPriceTextField.text = NSString(format: "$%.2f", (price)) as String
         let percentage = Double(price * Double(value))/100
         
         totalPrice = percentage + price
         
         tipPriceLabel.text = NSString(format: "$%.2f", (percentage)) as String
         totalPriceLabel.text = NSString(format: "$%.2f", totalPrice) as String
+        let perPersonPrice = (totalPrice / SplitStepper.value)
+        totalPerPersonLabel.text = NSString(format: "$%.2f", perPersonPrice) as String
     }
     
     @IBAction func splitBetween(_ sender: UIStepper) {
         splitPersonsLabel.text = "\(Int(sender.value))"
         let result = totalPrice / sender.value
         totalPerPersonLabel.text = NSString(format: "$%.2f", (result)) as String
+    }
+    
+    //TODO: Not okey here
+    func doneButtonAction() {
+        self.resignFirstResponder()
+
+        if initialPriceTextField.text == "" {
+            initialPriceTextField.text? = "$"
+        }
+        if initialPriceTextField.text?.description.prefix(1) == "$" {
+            initialPriceTextField.text = initialPriceTextField.text?.components(separatedBy: ["$"]).joined()
+        }
+        if let prueba = Double(initialPriceTextField.text!){
+            price = prueba
+            initialPriceTextField.text = "$\(initialPriceTextField.text!)"
+        }
     }
     
 }
@@ -93,74 +124,16 @@ extension UITextField {
     
     @objc func doneButtonAction() {
         self.resignFirstResponder()
-        
+
         if self.text == "" {
             self.text? = "$"
         }
-        if self.text?.description[0] == "$" {
-            self.text = self.text?.components(separatedBy: ["$"]).joined()
+        if self.text?.description.prefix(1) == "$" {
+            self.text? = (self.text?.components(separatedBy: ["$"]).joined())!
         }
         if let prueba = Double(self.text!){
             price = prueba
             self.text = "$\(self.text!)"
         }
-    }
-}
-
-//Extension to be able to use self.text?.description[0] == "$"
-extension String {
-    subscript (i: Int) -> Character {
-        return self[index(startIndex, offsetBy: i)]
-    }
-    subscript (bounds: CountableRange<Int>) -> Substring {
-        let start = index(startIndex, offsetBy: bounds.lowerBound)
-        let end = index(startIndex, offsetBy: bounds.upperBound)
-        return self[start ..< end]
-    }
-    subscript (bounds: CountableClosedRange<Int>) -> Substring {
-        let start = index(startIndex, offsetBy: bounds.lowerBound)
-        let end = index(startIndex, offsetBy: bounds.upperBound)
-        return self[start ... end]
-    }
-    subscript (bounds: CountablePartialRangeFrom<Int>) -> Substring {
-        let start = index(startIndex, offsetBy: bounds.lowerBound)
-        let end = index(endIndex, offsetBy: -1)
-        return self[start ... end]
-    }
-    subscript (bounds: PartialRangeThrough<Int>) -> Substring {
-        let end = index(startIndex, offsetBy: bounds.upperBound)
-        return self[startIndex ... end]
-    }
-    subscript (bounds: PartialRangeUpTo<Int>) -> Substring {
-        let end = index(startIndex, offsetBy: bounds.upperBound)
-        return self[startIndex ..< end]
-    }
-}
-extension Substring {
-    subscript (i: Int) -> Character {
-        return self[index(startIndex, offsetBy: i)]
-    }
-    subscript (bounds: CountableRange<Int>) -> Substring {
-        let start = index(startIndex, offsetBy: bounds.lowerBound)
-        let end = index(startIndex, offsetBy: bounds.upperBound)
-        return self[start ..< end]
-    }
-    subscript (bounds: CountableClosedRange<Int>) -> Substring {
-        let start = index(startIndex, offsetBy: bounds.lowerBound)
-        let end = index(startIndex, offsetBy: bounds.upperBound)
-        return self[start ... end]
-    }
-    subscript (bounds: CountablePartialRangeFrom<Int>) -> Substring {
-        let start = index(startIndex, offsetBy: bounds.lowerBound)
-        let end = index(endIndex, offsetBy: -1)
-        return self[start ... end]
-    }
-    subscript (bounds: PartialRangeThrough<Int>) -> Substring {
-        let end = index(startIndex, offsetBy: bounds.upperBound)
-        return self[startIndex ... end]
-    }
-    subscript (bounds: PartialRangeUpTo<Int>) -> Substring {
-        let end = index(startIndex, offsetBy: bounds.upperBound)
-        return self[startIndex ..< end]
     }
 }

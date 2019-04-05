@@ -29,7 +29,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$0.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="74y-yp-c8V">
-                                <rect key="frame" x="259" y="297" width="100" height="27.666666666666686"/>
+                                <rect key="frame" x="259" y="300" width="100" height="27.666666666666686"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="rKB-4D-nIS"/>
                                 </constraints>
@@ -53,7 +53,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="2Jv-af-vea">
-                                <rect key="frame" x="14" y="364.66666666666669" width="347" height="31"/>
+                                <rect key="frame" x="14" y="367.66666666666669" width="347" height="31"/>
                                 <connections>
                                     <action selector="SliderAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="hyU-La-uzG"/>
                                 </connections>
@@ -70,9 +70,12 @@
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="doneAccessory" value="YES"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="doneEditingTextField:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="SOQ-GR-zhN"/>
+                                </connections>
                             </textField>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="NDs-yE-Fib">
-                                <rect key="frame" x="108.66666666666669" y="444.66666666666669" width="158" height="177.33333333333331"/>
+                                <rect key="frame" x="108.66666666666669" y="447.66666666666669" width="158" height="177.33333333333331"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Split between:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c9m-Ux-8nJ">
                                         <rect key="frame" x="8" y="0.0" width="141.66666666666666" height="27.666666666666668"/>
@@ -111,10 +114,10 @@
                         <constraints>
                             <constraint firstItem="2Jv-af-vea" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="7fL-oG-Uab"/>
                             <constraint firstItem="2Jv-af-vea" firstAttribute="top" secondItem="74y-yp-c8V" secondAttribute="bottom" constant="40" id="7gT-kI-aZd"/>
+                            <constraint firstItem="74y-yp-c8V" firstAttribute="centerY" secondItem="3Rh-ms-p3s" secondAttribute="centerY" id="9Hb-aC-057"/>
                             <constraint firstItem="VsI-Ji-lcL" firstAttribute="leading" secondItem="0Lg-ec-JdW" secondAttribute="trailing" constant="20" id="Dq8-Vp-GBm"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="74y-yp-c8V" secondAttribute="trailing" constant="16" id="Kln-KD-6kS"/>
                             <constraint firstItem="VsI-Ji-lcL" firstAttribute="top" secondItem="P09-31-pPH" secondAttribute="bottom" constant="16" id="Krw-b3-XIP"/>
-                            <constraint firstItem="74y-yp-c8V" firstAttribute="top" secondItem="VsI-Ji-lcL" secondAttribute="bottom" constant="16" id="TI7-A4-vXt"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="P09-31-pPH" secondAttribute="trailing" constant="16" id="Y89-AK-SFc"/>
                             <constraint firstItem="3Rh-ms-p3s" firstAttribute="top" secondItem="0Lg-ec-JdW" secondAttribute="bottom" constant="16" id="ZAC-WC-mMi"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="2Jv-af-vea" secondAttribute="trailing" constant="16" id="ceJ-Pd-ZVX"/>
