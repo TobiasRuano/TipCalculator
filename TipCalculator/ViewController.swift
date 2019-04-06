@@ -46,13 +46,15 @@ class ViewController: UIViewController {
         doneButtonAction()
         let porcentaje = price * 0.15
         tipPriceLabel.text = NSString(format: "$%.2f", (porcentaje)) as String
+        
         initialPriceTextField.text = NSString(format: "$%.2f", (price)) as String
         
         totalPrice = porcentaje + price
-        
         totalPriceLabel.text = NSString(format: "$%.2f", totalPrice) as String
         
-        totalPerPersonLabel.text = totalPriceLabel.text
+        let totalPerPerson = (totalPrice / SplitStepper.value)
+        totalPerPersonLabel.text = NSString(format: "$%.2f", totalPerPerson) as String
+        
         slider.setValue(0.15, animated: true)
     }
     @IBAction func SliderAction(_ sender: Any) {

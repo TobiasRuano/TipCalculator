@@ -58,7 +58,7 @@
                                     <action selector="SliderAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="hyU-La-uzG"/>
                                 </connections>
                             </slider>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" placeholder="$0.00" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="P09-31-pPH">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" placeholder="$0.00" textAlignment="right" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="P09-31-pPH">
                                 <rect key="frame" x="159" y="160" width="200" height="84"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="0eE-er-8io"/>
