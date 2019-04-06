@@ -37,11 +37,6 @@ class ViewController: UIViewController {
         totalPerPersonLabel.text = "0"
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
     @IBAction func doneEditingTextField(_ sender: UITextField) {
         doneButtonAction()
         let porcentaje = price * 0.15
