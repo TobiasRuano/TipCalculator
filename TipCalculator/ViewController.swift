@@ -34,7 +34,7 @@ class ViewController: UIViewController {
         SplitStepper.minimumValue = 1
         SplitStepper.stepValue = 1
         splitPersonsLabel.text = "1"
-        totalPerPersonLabel.text = "0"
+        totalPerPersonLabel.text = "$0.00"
     }
 
     @IBAction func doneEditingTextField(_ sender: UITextField) {
