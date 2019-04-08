@@ -38,7 +38,7 @@ class ViewController: UIViewController {
     }
 
     @IBAction func doneEditingTextField(_ sender: UITextField) {
-        doneButtonAction()
+        initialPriceTextField.doneButtonAction()
         let porcentaje = price * 0.15
         tipPriceLabel.text = NSString(format: "$%.2f", (porcentaje)) as String
         
@@ -73,23 +73,6 @@ class ViewController: UIViewController {
         let result = totalPrice / sender.value
         totalPerPersonLabel.text = NSString(format: "$%.2f", (result)) as String
     }
-    
-    //TODO: Not okey here
-    func doneButtonAction() {
-        self.resignFirstResponder()
-
-        if initialPriceTextField.text == "" {
-            initialPriceTextField.text? = "$"
-        }
-        if initialPriceTextField.text?.description.prefix(1) == "$" {
-            initialPriceTextField.text = initialPriceTextField.text?.components(separatedBy: ["$"]).joined()
-        }
-        if let prueba = Double(initialPriceTextField.text!){
-            price = prueba
-            initialPriceTextField.text = "$\(initialPriceTextField.text!)"
-        }
-    }
-    
 }
 
 extension UITextField {
