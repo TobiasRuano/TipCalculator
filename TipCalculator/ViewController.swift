@@ -19,7 +19,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var slider: UISlider!
     @IBOutlet weak var splitPersonsLabel: UILabel!
     @IBOutlet weak var totalPerPersonLabel: UILabel!
-    @IBOutlet weak var SplitStepper: UIStepper!
+    @IBOutlet weak var splitStepper: UIStepper!
     
     var totalPrice = 0.0
     
@@ -31,10 +31,10 @@ class ViewController: UIViewController {
     }
     
     func setUI() {
-        SplitStepper.minimumValue = 1
-        SplitStepper.stepValue = 1
-        splitPersonsLabel.text = "1"
-        totalPerPersonLabel.text = "$0.00"
+        splitStepper.minimumValue = 1
+        splitStepper.stepValue    = 1
+        splitPersonsLabel.text    = "1"
+        totalPerPersonLabel.text  = "$0.00"
     }
 
     @IBAction func doneEditingTextField(_ sender: UITextField) {
@@ -47,11 +47,12 @@ class ViewController: UIViewController {
         totalPrice = porcentaje + price
         totalPriceLabel.text = NSString(format: "$%.2f", totalPrice) as String
         
-        let totalPerPerson = (totalPrice / SplitStepper.value)
+        let totalPerPerson = (totalPrice / splitStepper.value)
         totalPerPersonLabel.text = NSString(format: "$%.2f", totalPerPerson) as String
         
         slider.setValue(0.15, animated: true)
     }
+    
     @IBAction func SliderAction(_ sender: Any) {
         initialPriceTextField.resignFirstResponder()
         let value: Int = Int((slider.value)*100)
@@ -64,7 +65,7 @@ class ViewController: UIViewController {
         
         tipPriceLabel.text = NSString(format: "$%.2f", (percentage)) as String
         totalPriceLabel.text = NSString(format: "$%.2f", totalPrice) as String
-        let perPersonPrice = (totalPrice / SplitStepper.value)
+        let perPersonPrice = (totalPrice / splitStepper.value)
         totalPerPersonLabel.text = NSString(format: "$%.2f", perPersonPrice) as String
     }
     
@@ -73,47 +74,5 @@ class ViewController: UIViewController {
         let result = totalPrice / sender.value
         totalPerPersonLabel.text = NSString(format: "$%.2f", (result)) as String
     }
-}
-
-extension UITextField {
     
-    @IBInspectable var doneAccessory: Bool {
-        get {
-            return self.doneAccessory
-        }
-        set (hasDone) {
-            if hasDone{
-                addDoneButtonOnKeyboard()
-            }
-        }
-    }
-    
-    func addDoneButtonOnKeyboard() {
-        let doneToolbar: UIToolbar = UIToolbar(frame: CGRect.init(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 50))
-        doneToolbar.barStyle = .default
-        
-        let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-        let done: UIBarButtonItem = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(self.doneButtonAction))
-        
-        let items = [flexSpace, done]
-        doneToolbar.items = items
-        doneToolbar.sizeToFit()
-        
-        self.inputAccessoryView = doneToolbar
-    }
-    
-    @objc func doneButtonAction() {
-        self.resignFirstResponder()
-
-        if self.text == "" {
-            self.text? = "$"
-        }
-        if self.text?.description.prefix(1) == "$" {
-            self.text? = (self.text?.components(separatedBy: ["$"]).joined())!
-        }
-        if let prueba = Double(self.text!){
-            price = prueba
-            self.text = "$\(self.text!)"
-        }
-    }
 }
