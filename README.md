@@ -1,7 +1,7 @@
 # TipCalculator
 > Simple app to know how much to tip!
 
-![](header.png)
+![](docs/header.png)
 
 ## Features
 * Select the percentage of tip you want
