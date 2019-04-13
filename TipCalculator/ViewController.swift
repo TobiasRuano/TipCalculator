@@ -27,7 +27,22 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         slider.setValue(0.15, animated: false)
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         setUI()
+        checkDeviceSize()
+    }
+    
+    func checkDeviceSize() {
+        if UIDevice().userInterfaceIdiom == .phone {
+            switch UIScreen.main.bounds.size.height{
+            case 480:
+                self.navigationController?.navigationBar.prefersLargeTitles = false
+            case 568:
+                self.navigationController?.navigationBar.prefersLargeTitles = false
+            default:
+                self.navigationController?.navigationBar.prefersLargeTitles = true
+            }
+        }
     }
     
     func setUI() {
@@ -51,6 +66,7 @@ class ViewController: UIViewController {
         totalPerPersonLabel.text = NSString(format: "$%.2f", totalPerPerson) as String
         
         slider.setValue(0.15, animated: true)
+        percentageTipLabel.text = "Tip (15%)"
     }
     
     @IBAction func SliderAction(_ sender: Any) {
