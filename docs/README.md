@@ -9,8 +9,6 @@
 
 ## Meta
 
-Tobias Ruano – [@tobiasruano](https://twitter.com/tobiasruano) – truano@uade.edu.ar
+Tobias Ruano – [tobiasruano.com](tobiasruano.com) -  [@tobiasruano](https://twitter.com/tobiasruano) – truano@uade.edu.ar
 
-Distributed under the LGPL-3.0 License. See ``LICENSE`` for more information.
-
-[https://github.com/TobiasRuano/TipCalculator](https://github.com/TobiasRuano/TipCalculator)
+[Appstore](https://itunes.apple.com/us/app/tip-bill-calculator/id1459700508?l=es&ls=1&mt=8)
