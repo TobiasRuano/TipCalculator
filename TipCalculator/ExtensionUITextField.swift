@@ -36,7 +36,8 @@ extension UITextField {
         self.inputAccessoryView = doneToolbar
     }
     
-    @objc func doneButtonAction() {
+    @objc func doneButtonAction(money: Double) -> Double {
+        var price = 0.0
         self.resignFirstResponder()
         
         if self.text == "" {
@@ -49,5 +50,7 @@ extension UITextField {
             price = prueba
             self.text = "$\(self.text!)"
         }
+        
+        return price
     }
 }
