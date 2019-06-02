@@ -8,8 +8,6 @@
 
 import UIKit
 
-var price: Double = 0
-
 class ViewController: UIViewController {
 
     @IBOutlet weak var initialPriceTextField: UITextField!
@@ -22,6 +20,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var splitStepper: UIStepper!
     
     var totalPrice = 0.0
+    var price: Double = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,7 +52,8 @@ class ViewController: UIViewController {
     }
 
     @IBAction func doneEditingTextField(_ sender: UITextField) {
-        initialPriceTextField.doneButtonAction()
+        price = initialPriceTextField.doneButtonAction(money: price)
+        
         let porcentaje = price * 0.15
         tipPriceLabel.text = NSString(format: "$%.2f", (porcentaje)) as String
         
