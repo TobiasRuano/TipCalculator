@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var initialPriceTextField: UITextField!
     @IBOutlet weak var tipPriceLabel: UILabel!
@@ -24,6 +24,8 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        initialPriceTextField.delegate = self
         
         slider.setValue(0.15, animated: false)
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
@@ -67,6 +69,12 @@ class ViewController: UIViewController {
         
         slider.setValue(0.15, animated: true)
         percentageTipLabel.text = "Tip (15%)"
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        doneEditingTextField(textField)
+        
+        return true
     }
     
     @IBAction func SliderAction(_ sender: Any) {

@@ -43,9 +43,11 @@ extension UITextField {
         if self.text == "" {
             self.text? = "$"
         }
+        
         if self.text?.description.prefix(1) == "$" {
             self.text? = (self.text?.components(separatedBy: ["$"]).joined())!
         }
+        
         if let prueba = Double(self.text!){
             price = prueba
             self.text = "$\(self.text!)"
