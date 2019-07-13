@@ -73,7 +73,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         doneEditingTextField(textField)
-        
         return true
     }
     

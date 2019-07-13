@@ -1,0 +1,30 @@
+
+/* Class = "UILabel"; text = "Tip (15%)"; ObjectID = "0Lg-ec-JdW"; */
+"0Lg-ec-JdW.text" = "Propina (15%)";
+
+/* Class = "UILabel"; text = "Total"; ObjectID = "3Rh-ms-p3s"; */
+"3Rh-ms-p3s.text" = "Total";
+
+/* Class = "UILabel"; text = "$0.00"; ObjectID = "74y-yp-c8V"; */
+"74y-yp-c8V.text" = "$0.00";
+
+/* Class = "UILabel"; text = "Total per Person:"; ObjectID = "8qb-LD-E75"; */
+"8qb-LD-E75.text" = "Total por Persona:";
+
+/* Class = "UILabel"; text = "$22.75"; ObjectID = "9Vp-7j-FVE"; */
+"9Vp-7j-FVE.text" = "$22.75";
+
+/* Class = "UITextField"; placeholder = "$0.00"; ObjectID = "P09-31-pPH"; */
+"P09-31-pPH.placeholder" = "$0.00";
+
+/* Class = "UILabel"; text = "3"; ObjectID = "RUu-QQ-IcQ"; */
+"RUu-QQ-IcQ.text" = "3";
+
+/* Class = "UILabel"; text = "$0.00"; ObjectID = "VsI-Ji-lcL"; */
+"VsI-Ji-lcL.text" = "$0.00";
+
+/* Class = "UINavigationItem"; title = "Tip Calculator"; ObjectID = "Wo9-Wy-PQb"; */
+"Wo9-Wy-PQb.title" = "Propina";
+
+/* Class = "UILabel"; text = "Split between:"; ObjectID = "c9m-Ux-8nJ"; */
+"c9m-Ux-8nJ.text" = "Compartir Entre:";
