@@ -3,16 +3,16 @@
 "0Lg-ec-JdW.text" = "(15%)";
 
 /* Class = "UILabel"; text = "Total"; ObjectID = "3Rh-ms-p3s"; */
-"3Rh-ms-p3s.text" = "Total";
+"3Rh-ms-p3s.text" = "总";
 
 /* Class = "UILabel"; text = "$0.00"; ObjectID = "74y-yp-c8V"; */
 "74y-yp-c8V.text" = "$0.00";
 
 /* Class = "UILabel"; text = "Tip"; ObjectID = "7QC-CP-fVG"; */
-"7QC-CP-fVG.text" = "Propina";
+"7QC-CP-fVG.text" = "小费";
 
 /* Class = "UILabel"; text = "Total per Person:"; ObjectID = "8qb-LD-E75"; */
-"8qb-LD-E75.text" = "Total por Persona:";
+"8qb-LD-E75.text" = "每人总数:";
 
 /* Class = "UILabel"; text = "$22.75"; ObjectID = "9Vp-7j-FVE"; */
 "9Vp-7j-FVE.text" = "$22.75";
@@ -27,7 +27,7 @@
 "VsI-Ji-lcL.text" = "$0.00";
 
 /* Class = "UINavigationItem"; title = "Tip Calculator"; ObjectID = "Wo9-Wy-PQb"; */
-"Wo9-Wy-PQb.title" = "Propina";
+"Wo9-Wy-PQb.title" = "小费计算器";
 
 /* Class = "UILabel"; text = "Split between:"; ObjectID = "c9m-Ux-8nJ"; */
-"c9m-Ux-8nJ.text" = "Dividir Entre:";
+"c9m-Ux-8nJ.text" = "之间共享:";

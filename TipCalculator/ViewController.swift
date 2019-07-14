@@ -68,7 +68,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         totalPerPersonLabel.text = NSString(format: "$%.2f", totalPerPerson) as String
         
         slider.setValue(0.15, animated: true)
-        percentageTipLabel.text = "Tip (15%)"
+        percentageTipLabel.text = "(15%)"
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -79,7 +79,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBAction func SliderAction(_ sender: Any) {
         initialPriceTextField.resignFirstResponder()
         let value: Int = Int((slider.value)*100)
-        percentageTipLabel.text = "Tip (\(value)%)"
+        percentageTipLabel.text = "(\(value)%)"
         
         initialPriceTextField.text = NSString(format: "$%.2f", (price)) as String
         let percentage = Double(price * Double(value))/100

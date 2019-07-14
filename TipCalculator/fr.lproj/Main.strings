@@ -9,10 +9,10 @@
 "74y-yp-c8V.text" = "$0.00";
 
 /* Class = "UILabel"; text = "Tip"; ObjectID = "7QC-CP-fVG"; */
-"7QC-CP-fVG.text" = "Propina";
+"7QC-CP-fVG.text" = "Pourboire";
 
 /* Class = "UILabel"; text = "Total per Person:"; ObjectID = "8qb-LD-E75"; */
-"8qb-LD-E75.text" = "Total por Persona:";
+"8qb-LD-E75.text" = "Total par Personne:";
 
 /* Class = "UILabel"; text = "$22.75"; ObjectID = "9Vp-7j-FVE"; */
 "9Vp-7j-FVE.text" = "$22.75";
@@ -27,7 +27,7 @@
 "VsI-Ji-lcL.text" = "$0.00";
 
 /* Class = "UINavigationItem"; title = "Tip Calculator"; ObjectID = "Wo9-Wy-PQb"; */
-"Wo9-Wy-PQb.title" = "Propina";
+"Wo9-Wy-PQb.title" = "Pourboire";
 
 /* Class = "UILabel"; text = "Split between:"; ObjectID = "c9m-Ux-8nJ"; */
-"c9m-Ux-8nJ.text" = "Dividir Entre:";
+"c9m-Ux-8nJ.text" = "Partagé entre:";
