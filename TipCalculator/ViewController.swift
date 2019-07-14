@@ -97,5 +97,4 @@ class ViewController: UIViewController, UITextFieldDelegate {
         let result = totalPrice / sender.value
         totalPerPersonLabel.text = NSString(format: "$%.2f", (result)) as String
     }
-    
 }
