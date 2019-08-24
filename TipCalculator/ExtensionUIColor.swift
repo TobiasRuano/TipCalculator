@@ -9,5 +9,14 @@
 import UIKit
 
 extension UIColor {
-    
+//    static let dynamicBackgoundColor = UIColor { (traitCollection: UITraitCollection) -> UIColor in
+//        switch traitCollection.userInterfaceStyle {
+//        case .dark:
+//            return .black
+//        case .light, .unspecified:
+//            return .white
+//        default:
+//            return .black
+//        }
+//    }
 }

@@ -25,8 +25,8 @@ class SettingsTableViewController: UITableViewController {
     func changeScreenMode() {
         if darkModeSwitch.isOn {
             self.view.backgroundColor = .black
-            tableView.backgroundColor = .black
-            tableView.separatorColor = .clear
+            tableView.backgroundColor = .darkGray
+            tableView.separatorColor = .lightGray
             tableView.reloadData()
         } else {
             self.view.backgroundColor = .groupTableViewBackground
@@ -46,7 +46,7 @@ class SettingsTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if darkModeSwitch.isOn {
-            cell.backgroundColor = .darkGray
+            cell.backgroundColor = .black
         } else {
             cell.backgroundColor = .white
         }
