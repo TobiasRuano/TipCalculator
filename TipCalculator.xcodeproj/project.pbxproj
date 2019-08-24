@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8BA5000223116DB20000F509 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA5000123116DB20000F509 /* SettingsTableViewController.swift */; };
+		8BA5000423116FD30000F509 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA5000323116FD30000F509 /* AboutViewController.swift */; };
+		8BA50010231176440000F509 /* ExtensionUIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA5000F231176440000F509 /* ExtensionUIColor.swift */; };
 		8BBFEF1B20FAD0DE008F2875 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBFEF1A20FAD0DE008F2875 /* AppDelegate.swift */; };
 		8BBFEF1D20FAD0DE008F2875 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBFEF1C20FAD0DE008F2875 /* ViewController.swift */; };
 		8BBFEF2020FAD0DE008F2875 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BBFEF1E20FAD0DE008F2875 /* Main.storyboard */; };
@@ -18,14 +21,13 @@
 /* Begin PBXFileReference section */
 		8B0B9F6222DA878100D8C4D7 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
 		8B0B9F6322DA878100D8C4D7 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
-		8B0B9F6422DA883800D8C4D7 /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/Main.strings"; sourceTree = "<group>"; };
-		8B0B9F6522DA883800D8C4D7 /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		8B0B9F6622DA99F100D8C4D7 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
 		8B0B9F6722DA99F100D8C4D7 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
-		8B0B9F6822DA9C0900D8C4D7 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
-		8B0B9F6922DA9C0900D8C4D7 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		8B513FED22DA14FA007D90D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8B513FEE22DA14FA007D90D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8BA5000123116DB20000F509 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		8BA5000323116FD30000F509 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		8BA5000F231176440000F509 /* ExtensionUIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUIColor.swift; sourceTree = "<group>"; };
 		8BBFEF1720FAD0DE008F2875 /* TipCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TipCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BBFEF1A20FAD0DE008F2875 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8BBFEF1C20FAD0DE008F2875 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -66,7 +68,10 @@
 			children = (
 				8BBFEF1A20FAD0DE008F2875 /* AppDelegate.swift */,
 				8BBFEF1C20FAD0DE008F2875 /* ViewController.swift */,
+				8BA5000123116DB20000F509 /* SettingsTableViewController.swift */,
+				8BA5000323116FD30000F509 /* AboutViewController.swift */,
 				8BE00755225BC59E00089AC9 /* ExtensionUITextField.swift */,
+				8BA5000F231176440000F509 /* ExtensionUIColor.swift */,
 				8BBFEF1E20FAD0DE008F2875 /* Main.storyboard */,
 				8BBFEF2120FAD0E0008F2875 /* Assets.xcassets */,
 				8BBFEF2320FAD0E0008F2875 /* LaunchScreen.storyboard */,
@@ -119,9 +124,7 @@
 				en,
 				Base,
 				es,
-				"es-419",
 				fr,
-				"zh-Hans",
 			);
 			mainGroup = 8BBFEF0E20FAD0DE008F2875;
 			productRefGroup = 8BBFEF1820FAD0DE008F2875 /* Products */;
@@ -152,8 +155,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				8BE00756225BC59E00089AC9 /* ExtensionUITextField.swift in Sources */,
+				8BA50010231176440000F509 /* ExtensionUIColor.swift in Sources */,
 				8BBFEF1D20FAD0DE008F2875 /* ViewController.swift in Sources */,
 				8BBFEF1B20FAD0DE008F2875 /* AppDelegate.swift in Sources */,
+				8BA5000423116FD30000F509 /* AboutViewController.swift in Sources */,
+				8BA5000223116DB20000F509 /* SettingsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -165,9 +171,7 @@
 			children = (
 				8B513FED22DA14FA007D90D2 /* Base */,
 				8B0B9F6222DA878100D8C4D7 /* es */,
-				8B0B9F6422DA883800D8C4D7 /* es-419 */,
 				8B0B9F6622DA99F100D8C4D7 /* fr */,
-				8B0B9F6822DA9C0900D8C4D7 /* zh-Hans */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -177,9 +181,7 @@
 			children = (
 				8B513FEE22DA14FA007D90D2 /* Base */,
 				8B0B9F6322DA878100D8C4D7 /* es */,
-				8B0B9F6522DA883800D8C4D7 /* es-419 */,
 				8B0B9F6722DA99F100D8C4D7 /* fr */,
-				8B0B9F6922DA9C0900D8C4D7 /* zh-Hans */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
