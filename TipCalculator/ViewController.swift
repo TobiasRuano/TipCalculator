@@ -28,7 +28,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         initialPriceTextField.delegate = self
         
         slider.setValue(0.15, animated: false)
-        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
         setUI()
         checkDeviceSize()
     }
