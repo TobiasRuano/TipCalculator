@@ -56,10 +56,10 @@ a:link, a:hover, a:visited, a:active {
     border-radius:0px 0px 0px 0px
 }
 
-.headerBackground {
+/* .headerBackground {
     height: 70px;
     background-color:rgba(0, 0, 0, 0.1)
-}
+} */
 
 .container {
     display: grid;
