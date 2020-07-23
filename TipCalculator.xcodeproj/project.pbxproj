@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		8BA5000223116DB20000F509 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA5000123116DB20000F509 /* SettingsTableViewController.swift */; };
 		8BA5000423116FD30000F509 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA5000323116FD30000F509 /* AboutViewController.swift */; };
-		8BA50010231176440000F509 /* ExtensionUIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA5000F231176440000F509 /* ExtensionUIColor.swift */; };
+		8BA50010231176440000F509 /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA5000F231176440000F509 /* Enum.swift */; };
 		8BBFEF1B20FAD0DE008F2875 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBFEF1A20FAD0DE008F2875 /* AppDelegate.swift */; };
 		8BBFEF1D20FAD0DE008F2875 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBFEF1C20FAD0DE008F2875 /* ViewController.swift */; };
 		8BBFEF2020FAD0DE008F2875 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BBFEF1E20FAD0DE008F2875 /* Main.storyboard */; };
@@ -25,9 +25,10 @@
 		8B0B9F6722DA99F100D8C4D7 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		8B513FED22DA14FA007D90D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8B513FEE22DA14FA007D90D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8B6C5EC8234D6A93006BEE07 /* TipCalculator.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TipCalculator.entitlements; sourceTree = "<group>"; };
 		8BA5000123116DB20000F509 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		8BA5000323116FD30000F509 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
-		8BA5000F231176440000F509 /* ExtensionUIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUIColor.swift; sourceTree = "<group>"; };
+		8BA5000F231176440000F509 /* Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enum.swift; sourceTree = "<group>"; };
 		8BBFEF1720FAD0DE008F2875 /* TipCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TipCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BBFEF1A20FAD0DE008F2875 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8BBFEF1C20FAD0DE008F2875 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -66,12 +67,13 @@
 		8BBFEF1920FAD0DE008F2875 /* TipCalculator */ = {
 			isa = PBXGroup;
 			children = (
+				8B6C5EC8234D6A93006BEE07 /* TipCalculator.entitlements */,
 				8BBFEF1A20FAD0DE008F2875 /* AppDelegate.swift */,
 				8BBFEF1C20FAD0DE008F2875 /* ViewController.swift */,
 				8BA5000123116DB20000F509 /* SettingsTableViewController.swift */,
 				8BA5000323116FD30000F509 /* AboutViewController.swift */,
 				8BE00755225BC59E00089AC9 /* ExtensionUITextField.swift */,
-				8BA5000F231176440000F509 /* ExtensionUIColor.swift */,
+				8BA5000F231176440000F509 /* Enum.swift */,
 				8BBFEF1E20FAD0DE008F2875 /* Main.storyboard */,
 				8BBFEF2120FAD0E0008F2875 /* Assets.xcassets */,
 				8BBFEF2320FAD0E0008F2875 /* LaunchScreen.storyboard */,
@@ -156,7 +158,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8BE00756225BC59E00089AC9 /* ExtensionUITextField.swift in Sources */,
-				8BA50010231176440000F509 /* ExtensionUIColor.swift in Sources */,
+				8BA50010231176440000F509 /* Enum.swift in Sources */,
 				8BBFEF1D20FAD0DE008F2875 /* ViewController.swift in Sources */,
 				8BBFEF1B20FAD0DE008F2875 /* AppDelegate.swift in Sources */,
 				8BA5000423116FD30000F509 /* AboutViewController.swift in Sources */,
@@ -309,12 +311,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = TipCalculator/TipCalculator.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 23;
 				DEVELOPMENT_TEAM = 7344G4M3BL;
 				INFOPLIST_FILE = TipCalculator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.tobiasruano.tip-calculator";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -324,12 +330,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = TipCalculator/TipCalculator.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 23;
 				DEVELOPMENT_TEAM = 7344G4M3BL;
 				INFOPLIST_FILE = TipCalculator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.tobiasruano.tip-calculator";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

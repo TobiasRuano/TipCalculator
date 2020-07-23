@@ -28,9 +28,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
         initialPriceTextField.delegate = self
         
         slider.setValue(0.15, animated: false)
-        navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
+        //navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor(named: "titleColor")]
         setUI()
         checkDeviceSize()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        //view.backgroundColor = UIColor(named: "BackgroundGeneral")
+        //self.navigationController?.navigationBar.backgroundColor = UIColor(named: "navColor")
     }
     
     func checkDeviceSize() {
@@ -55,18 +60,13 @@ class ViewController: UIViewController, UITextFieldDelegate {
 
     @IBAction func doneEditingTextField(_ sender: UITextField) {
         price = initialPriceTextField.doneButtonAction(money: price)
-        
         let porcentaje = price * 0.15
         tipPriceLabel.text = NSString(format: "$%.2f", (porcentaje)) as String
-        
         initialPriceTextField.text = NSString(format: "$%.2f", (price)) as String
-        
         totalPrice = porcentaje + price
         totalPriceLabel.text = NSString(format: "$%.2f", totalPrice) as String
-        
         let totalPerPerson = (totalPrice / splitStepper.value)
         totalPerPersonLabel.text = NSString(format: "$%.2f", totalPerPerson) as String
-        
         slider.setValue(0.15, animated: true)
         percentageTipLabel.text = "(15%)"
     }
@@ -76,16 +76,17 @@ class ViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        textField.text = "$"
+    }
+    
     @IBAction func SliderAction(_ sender: Any) {
         initialPriceTextField.resignFirstResponder()
         let value: Int = Int((slider.value)*100)
         percentageTipLabel.text = "(\(value)%)"
-        
         initialPriceTextField.text = NSString(format: "$%.2f", (price)) as String
         let percentage = Double(price * Double(value))/100
-        
         totalPrice = percentage + price
-        
         tipPriceLabel.text = NSString(format: "$%.2f", (percentage)) as String
         totalPriceLabel.text = NSString(format: "$%.2f", totalPrice) as String
         let perPersonPrice = (totalPrice / splitStepper.value)

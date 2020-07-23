@@ -48,11 +48,11 @@ extension UITextField {
             self.text? = (self.text?.components(separatedBy: ["$"]).joined())!
         }
         
-        if let prueba = Double(self.text!){
+        let decimalText = self.text!.replacingOccurrences(of: ",", with: ".")
+        if let prueba = Double(decimalText){
             price = prueba
             self.text = "$\(self.text!)"
         }
-        
         return price
     }
 }
